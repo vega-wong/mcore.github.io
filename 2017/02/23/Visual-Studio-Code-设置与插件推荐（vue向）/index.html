@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+    <!-- 
+        © Material Theme
+        https://github.com/viosey/hexo-theme-material
+        Version: 1.3.0 -->
+
+    <!-- Title -->
+    
+    <title>
+        
+            Visual Studio Code 设置与插件推荐（vue向） | 
+        
+        vega&#39;s blog
+    </title>
+
+    <!-- Favicons -->
+    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
+    <link rel="icon" sizes="192x192" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
+
+    <!-- Meta & Info -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0097A7">
+    <meta name="author" content="Vega Wong">
+    <meta name="description" content="vega&#39;s blog about programmer, Font-End ..">
+    <meta name="keywords" content="null">
+
+    <!--iOS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="Title">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="480">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vega&#39;s blog">
+
+    <!-- The Open Graph protocol -->
+    <meta property="og:url" content="http://vega-wong.github.io">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Visual Studio Code 设置与插件推荐（vue向） | vega&#39;s blog">
+    <meta property="og:description" content="vega&#39;s blog about programmer, Font-End ..">
+    
+
+    <!--[if lte IE 9]>
+        <link rel="stylesheet" href="/css/ie-blocker.css">
+
+        
+            <script src="/js/ie-blocker.zhCN.js"></script>
+        
+    <![endif]-->
+
+    <!-- Import CSS -->
+    <link rel="stylesheet" href="/css/material.min.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!-- Config CSS -->
+
+
+<!-- Other Styles -->
+<style>
+  body, html {
+    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+
+  a {
+    color: #00838F;
+  }
+
+  .mdl-card__media,
+  #search-label,
+  #search-form-label:after,
+  #scheme-Paradox .hot_tags-count,
+  #scheme-Paradox .sidebar_archives-count,
+  #scheme-Paradox .sidebar-colored .sidebar-header,
+  #scheme-Paradox .sidebar-colored .sidebar-badge{
+    background-color: #0097A7 !important;
+  }
+
+  /* Sidebar User Drop Down Menu Text Color */
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
+  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
+    color: #0097A7 !important;
+  }
+
+  #post_entry-right-info,
+  .sidebar-colored .sidebar-nav li:hover > a,
+  .sidebar-colored .sidebar-nav li:hover > a i,
+  .sidebar-colored .sidebar-nav li > a:hover,
+  .sidebar-colored .sidebar-nav li > a:hover i,
+  .sidebar-colored .sidebar-nav li > a:focus i,
+  .sidebar-colored .sidebar-nav > .open > a,
+  .sidebar-colored .sidebar-nav > .open > a:hover,
+  .sidebar-colored .sidebar-nav > .open > a:focus,
+  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
+    color: #0097A7 !important;
+  }
+
+  .toTop {
+    background: #757575 !important;
+  }
+
+  .material-layout .material-post>.material-nav,
+  .material-layout .material-index>.material-nav,
+  .material-nav a {
+    color: #757575;
+  }
+
+  #scheme-Paradox .MD-burger-layer {
+    background-color: #757575;
+  }
+
+  #scheme-Paradox #post-toc-trigger-btn {
+    color: #757575;
+  }
+
+  .post-toc a:hover {
+    color: #00838F;
+    text-decoration: underline;
+  }
+</style>
+
+
+<!-- Theme Background Related-->
+
+    <style>
+      body{
+        background-color: #F5F5F5;
+      }
+
+      /* blog_info bottom background */
+      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
+        background-color: #fff;
+      }
+    </style>
+
+
+
+
+<!-- Fade Effect -->
+
+    <style>
+      .fade {
+        transition: all 800ms linear;
+        -webkit-transform: translate3d(0,0,0);
+        -moz-transform: translate3d(0,0,0);
+        -ms-transform: translate3d(0,0,0);
+        -o-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        opacity: 1;
+      }
+
+      .fade.out{
+        opacity: 0;
+      }
+    </style>
+
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/queue.js"></script>
+
+    <!-- UC Browser Compatible -->
+    <script>
+        var agent = navigator.userAgent.toLowerCase();
+        if(agent.indexOf('ucbrowser')>0) {
+            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
+            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
+        }
+    </script>
+
+    
+
+    
+
+    <!-- Bing Background -->
+    
+
+    <!-- Custom Head -->
+    
+</head>
+
+
+    
+        <body id="scheme-Paradox" class="lazy">
+            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
+                
+
+                <!-- Main Container -->
+                <main class="material-layout__content" id="main">
+
+                    <!-- Top Anchor -->
+                    <div id="top"></div>
+
+                    
+                        <!-- Hamburger Button -->
+                        <button class="MD-burger-icon sidebar-toggle">
+                            <span class="MD-burger-layer"></span>
+                        </button>
+                    
+
+                    <!-- Post TOC -->
+
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+    <!-- Left aligned menu below button -->
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#首先来一发截图"><span class="post-toc-number">1.</span> <span class="post-toc-text">首先来一发截图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#插件推荐"><span class="post-toc-number">2.</span> <span class="post-toc-text">插件推荐</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#编辑器配置"><span class="post-toc-number">3.</span> <span class="post-toc-text">编辑器配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#结语"><span class="post-toc-number">4.</span> <span class="post-toc-text">结语</span></a></li></ol>
+
+        <!--
+        <li class="mdl-menu__item">
+            Some Action
+        </li>
+        -->
+    </ul>
+
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
+    
+        
+            <!-- Random Thumbnail -->
+            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
+            <script>
+    var randomNum = Math.floor(Math.random() * 19 + 1);
+
+    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
+</script>
+
+        
+    
+            <p class="article-headline-p">
+                Visual Studio Code 设置与插件推荐（vue向）
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>Vega Wong</strong>
+        <span>2月 23, 2017</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+        <i class="material-icons" role="presentation">bookmark</i>
+        <span class="visuallyhidden">bookmark</span>
+    </button>
+    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
+        <li class="mdl-menu__item">
+        
+    </ul>
+    
+
+    <!-- Share -->
+    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Visual Studio Code 设置与插件推荐（vue向）&url=http://vega-wong.github.io//2017/02/23/Visual-Studio-Code-设置与插件推荐（vue向）/index.html&pic=&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Visual Studio Code 设置与插件推荐（vue向）&url=http://vega-wong.github.io//2017/02/23/Visual-Studio-Code-设置与插件推荐（vue向）/index.html&via=Vega Wong" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://vega-wong.github.io//2017/02/23/Visual-Studio-Code-设置与插件推荐（vue向）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://vega-wong.github.io//2017/02/23/Visual-Studio-Code-设置与插件推荐（vue向）/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
+</div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p><code>visual studio code</code> （以下简称 <code>vscode</code> ） 作为一款前端利器， 在此小弟也不多做介绍， 本文旨在记录和分享一下自己在当前工作状态面向 <code>vue</code> 项目开发使用的一些配置和插件推荐。</p>
+<p>（不要问我问什么 <code>vscode</code>, 不是 <code>atom</code> 和 <code>ST3</code> , 其实我也不太喜欢这货， 首先这货老爸是微软， 再者， 这货真的丑。。。。）</p>
+<p>废话不多说，以下慢慢道来：</p>
+<h3 id="首先来一发截图"><a href="/2017/02/23/Visual-Studio-Code-设置与插件推荐（vue向）/#首先来一发截图" class="headerlink" title="首先来一发截图"></a>首先来一发截图</h3><p><img src="/2017/02/23/Visual-Studio-Code-设置与插件推荐（vue向）/4A5890723D7B9F5A302392DF0F1435A5.png" alt="WX20170223-155149.png"><br>（有没有感觉丑炸天，看看就惯了）</p>
+<h3 id="插件推荐"><a href="/2017/02/23/Visual-Studio-Code-设置与插件推荐（vue向）/#插件推荐" class="headerlink" title="插件推荐"></a>插件推荐</h3><ul>
+<li><p><em>beautify</em></p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify" target="_blank" rel="external">本体</a></p>
+<p>看起来没啥。 不就是一格式化插件嘛。  不过目前版本的 <code>vscode</code> 默认还是不支持格式化vue后缀的文件， 哪怕是片段代码。  但是这个可以， 只需要加上以下简单的设置</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// setting.json</span></div><div class="line"><span class="comment">// ...</span></div><div class="line"><span class="comment">// Link file types to the beautifier type</span></div><div class="line"><span class="string">"beautify.language"</span>: &#123;</div><div class="line">  <span class="string">"js"</span>: &#123;</div><div class="line">    <span class="string">"type"</span>: [</div><div class="line">      <span class="string">"javascript"</span>,</div><div class="line">      <span class="string">"json"</span></div><div class="line">    ],</div><div class="line">    <span class="string">"filename"</span>: [</div><div class="line">      <span class="string">".jshintrc"</span>,</div><div class="line">      <span class="string">".jsbeautify"</span></div><div class="line">    ]</div><div class="line">  &#125;,</div><div class="line">  <span class="string">"css"</span>: [</div><div class="line">    <span class="string">"css"</span>,</div><div class="line">    <span class="string">"scss"</span></div><div class="line">  ],</div><div class="line">  <span class="string">"html"</span>: [</div><div class="line">    <span class="string">"htm"</span>,</div><div class="line">    <span class="string">"html"</span>,</div><div class="line">    <span class="string">"vue"</span></div><div class="line">  ]</div><div class="line">&#125;</div><div class="line"><span class="comment">//...</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>  然后你就可以愉快的格式化 <code>*.vue</code> 文件的代码了。</p>
+<ul>
+<li><p><em>Document This</em></p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=joelday.docthis" target="_blank" rel="external">本体</a></p>
+<p>来一发预览：</p>
+<p><img src="https://github.com/joelday/vscode-docthis/raw/master/images/demo.gif" alt="documentthis"></p>
+<p>PS： <em>毕竟注释对源代码来说还是比较重要的， 特别是赏心悦目的注释</em></p>
+</li>
+<li><p><em>EditorConfig for Visual Studio Code</em></p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig" target="_blank" rel="external">本体</a></p>
+<p>做团队跨编辑器代码缩进风格约定就再好不过了，下面贴出一套配置</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">root = <span class="literal">true</span></div><div class="line"></div><div class="line">[*]</div><div class="line">indent_style = space</div><div class="line">indent_size = <span class="number">2</span></div><div class="line">end_of_line = lf</div><div class="line">charset = utf-<span class="number">8</span></div><div class="line">trim_trailing_whitespace = <span class="literal">true</span> <span class="comment"># doesn't work yet</span></div><div class="line">insert_final_newline = <span class="literal">true</span> <span class="comment"># doesn't work yet</span></div><div class="line"></div><div class="line">[Makefile]</div><div class="line">indent_style = tab</div><div class="line">indent_size = <span class="number">2</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p><em>ESLint</em></p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint" target="_blank" rel="external">本体</a></p>
+<p>在编辑上及时对不符合 <code>eslint</code> 约定的代码风格给出友好提示。 能最大化的同一团队代码风格，提高自己的代码逼格，养成良好的编程习惯， 还能一定程度上减少一些低级bug的出现。</p>
+</li>
+</ul>
+<ul>
+<li><p><em>vetur</em></p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=octref.vetur" target="_blank" rel="external">本体</a></p>
+<p>基础提示，源码高亮， emmet等功能。</p>
+<p>详细参考插件介绍的设置。</p>
+</li>
+<li><p><em>npm Intellisense </em> </p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense" target="_blank" rel="external">本体</a></p>
+<p>可提示出当前npm已安装的包名。</p>
+<p>预览： </p>
+<p><img src="https://github.com/ChristianKohler/NpmIntellisense/raw/master/images/auto_complete.gif" alt="npmintellisense"></p>
+</li>
+</ul>
+<ul>
+<li><p><em>Path Intellisense </em></p>
+<p><a href="https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense" target="_blank" rel="external">本体</a></p>
+<p>  有上面的npm包提示当然也少不了路径提示啦。。。</p>
+<p>  上图：</p>
+<p>  <img src="http://i.giphy.com/iaHeUiDeTUZuo.gif" alt="pathintellisense"></p>
+</li>
+</ul>
+<h3 id="编辑器配置"><a href="/2017/02/23/Visual-Studio-Code-设置与插件推荐（vue向）/#编辑器配置" class="headerlink" title="编辑器配置"></a>编辑器配置</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"editor.fontFamily"</span>: <span class="string">"Source Code Pro, Menlo, Monaco, 'Courier New', monospace"</span>,</div><div class="line">  <span class="string">"editor.renderLineHighlight"</span>: <span class="string">"none"</span>,</div><div class="line">  <span class="string">"editor.lineHeight"</span>: <span class="number">20</span>,</div><div class="line">  <span class="string">"editor.roundedSelection"</span>: <span class="literal">false</span>,</div><div class="line">  <span class="string">"editor.fontSize"</span>: <span class="number">12</span>,</div><div class="line">  <span class="string">"editor.tabSize"</span>: <span class="number">2</span>,</div><div class="line">  <span class="string">"editor.renderIndentGuides"</span>: <span class="literal">true</span>,</div><div class="line"></div><div class="line"></div><div class="line">  <span class="string">"extensions.autoUpdate"</span>: <span class="literal">true</span>,</div><div class="line"></div><div class="line">  <span class="string">"files.associations"</span>: &#123;</div><div class="line">    <span class="string">"*.es6"</span>: <span class="string">"javascript"</span>,</div><div class="line">    <span class="string">"*.vue"</span>: <span class="string">"vue"</span>,</div><div class="line">    <span class="string">"*.tpl"</span>: <span class="string">"html"</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">  <span class="string">"eslint.autoFixOnSave"</span>: <span class="literal">true</span>,</div><div class="line">  <span class="string">"eslint.validate"</span>: [</div><div class="line">    <span class="string">"javascript"</span>,</div><div class="line">    <span class="string">"javascriptreact"</span>,</div><div class="line">    <span class="string">"vue"</span></div><div class="line">  ],</div><div class="line">  <span class="string">"window.zoomLevel"</span>: <span class="number">0</span>,</div><div class="line">  <span class="string">"javascript.validate.enable"</span>: <span class="literal">false</span>,</div><div class="line"></div><div class="line"></div><div class="line">  <span class="comment">// Turns auto fix on save on or off.</span></div><div class="line">  <span class="string">"eslint.autoFixOnSave"</span>: <span class="literal">true</span>,</div><div class="line"></div><div class="line">  <span class="comment">// Emmet for vue</span></div><div class="line">  <span class="string">"emmet.syntaxProfiles"</span>: &#123;</div><div class="line">    <span class="string">"vue-html"</span>: <span class="string">"html"</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">// Link file types to the beautifier type</span></div><div class="line">  <span class="string">"beautify.language"</span>: &#123;</div><div class="line">    <span class="string">"js"</span>: &#123;</div><div class="line">      <span class="string">"type"</span>: [</div><div class="line">        <span class="string">"javascript"</span>,</div><div class="line">        <span class="string">"json"</span></div><div class="line">      ],</div><div class="line">      <span class="string">"filename"</span>: [</div><div class="line">        <span class="string">".jshintrc"</span>,</div><div class="line">        <span class="string">".jsbeautify"</span></div><div class="line">      ]</div><div class="line">    &#125;,</div><div class="line">    <span class="string">"css"</span>: [</div><div class="line">      <span class="string">"css"</span>,</div><div class="line">      <span class="string">"scss"</span></div><div class="line">    ],</div><div class="line">    <span class="string">"html"</span>: [</div><div class="line">      <span class="string">"htm"</span>,</div><div class="line">      <span class="string">"html"</span>,</div><div class="line">      <span class="string">"vue"</span></div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>另外我使用的颜色主题是 <code>One Dark</code>,  图标主题使用的是 <code>Seti</code>, 可自行在编辑上搜索安装。</p>
+<h3 id="结语"><a href="/2017/02/23/Visual-Studio-Code-设置与插件推荐（vue向）/#结语" class="headerlink" title="结语"></a>结语</h3><p><code>vscode</code> 的一些简单的个人设置就介绍到这里， 谢谢各位看官。</p>
+
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+
+
+
+
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2017/02/23/hello-world/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
+
+
+                    
+                        <!-- Overlay For Active Sidebar -->
+<div class="sidebar-overlay"></div>
+
+<!-- Material sidebar -->
+<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
+    <div id="sidebar-main">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
+    <!-- Top bar -->
+    <div class="top-bar"></div>
+
+    <!-- Sidebar toggle button -->
+    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
+        <i class="material-icons">clear_all</i>
+        <span class="mdl-button__ripple-container">
+            <span class="mdl-ripple">
+            </span>
+        </span>
+    </button>
+
+    <!-- Sidebar Avatar -->
+    <div class="sidebar-image">
+        <img src="/img/avatar.png" alt="Vega Wong's avatar">
+    </div>
+
+    <!-- Sidebar Email -->
+    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
+        vegawong@126.com
+        <b class="caret"></b>
+    </a>
+</div>
+
+
+        <!-- Sidebar Navigation  -->
+        <ul class="nav sidebar-nav">
+    <!-- User dropdown  -->
+    <li class="dropdown">
+        <ul id="settings-dropdown" class="dropdown-menu">
+            
+                <li>
+                    <a href="#" target="_blank" title="Email Me">
+                        
+                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
+                        
+                        Email Me
+                    </a>
+                </li>
+            
+        </ul>
+    </li>
+
+    <!-- Homepage -->
+    
+        <li id="sidebar-first-li">
+            <a href="/" target="_self">
+                
+                    <i class="material-icons sidebar-material-icons">home</i>
+                
+                主页
+            </a>
+        </li>
+        
+    
+
+    <!-- Archives  -->
+    
+        <li class="dropdown">
+            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
+                
+                    <i class="material-icons sidebar-material-icons">inbox</i>
+                
+                    归档
+                <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+            <li>
+                <a class="sidebar_archives-link" href="/archives/2017/02/">二月 2017<span class="sidebar_archives-count">2</span></a>
+            </ul>
+        </li>
+        
+    
+
+    <!-- Categories  -->
+    
+
+    <!-- Pages  -->
+    
+
+    <!-- Article Number  -->
+    
+</ul>
+
+
+        <!-- Sidebar Footer -->
+        <!--
+I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
+If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
+It will not impact the appearance and can give developers a lot of support :)
+
+很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
+如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
+它不会影响美观并可以给开发者很大的支持和动力。 :)
+-->
+
+<!-- Sidebar Divider -->
+
+    <div class="sidebar-divider"></div>
+
+
+<!-- Theme Material -->
+
+    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
+        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
+            主题 - Material
+            <span class="sidebar-badge badge-circle">i</span>
+        </div>
+    </a>
+
+
+<!-- Help & Support -->
+<!--
+
+-->
+
+<!-- Feedback -->
+<!--
+
+-->
+
+<!-- About Theme -->
+<!--
+
+-->
+
+    </div>
+
+    <!-- Sidebar Image -->
+    
+
+</aside>
+
+                    
+
+                    
+                        <!-- Footer Top Button -->
+                        <div class="toTop-wrap">
+    <a href="#top" class="toTop">
+        <i class="material-icons footer_top-i">expand_less</i>
+    </a>
+</div>
+
+                    
+
+                    <!--Footer-->
+<footer class="mdl-mini-footer" id="bottom">
+    
+        <!-- Paradox Footer Left Section -->
+        <div class="mdl-mini-footer--left-section sns-list">
+    <!-- Twitter -->
+    
+
+    <!-- Facebook -->
+    
+
+    <!-- Google + -->
+    
+
+    <!-- Weibo -->
+    
+
+    <!-- Instagram -->
+    
+
+    <!-- Tumblr -->
+    
+
+    <!-- Github -->
+    
+        <a href="https://github.com/vega-wong" target="_blank">
+            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
+                <span class="visuallyhidden">Github</span>
+            </button><!--
+     --></a>
+    
+
+    <!-- LinkedIn -->
+    
+
+    <!-- Zhihu -->
+    
+
+    <!-- Bilibili -->
+    
+
+    <!-- Telegram -->
+    
+</div>
+
+
+        <!--Copyright-->
+        <div id="copyright">
+            Copyright&nbsp;©&nbsp;
+            <script type="text/javascript">
+                var fd = new Date();
+                document.write(fd.getFullYear());
+            </script>
+            &nbsp;vega's blog
+        </div>
+
+        <!-- Paradox Footer Right Section -->
+
+        <!--
+        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
+        It will not impact the appearance and can give developers a lot of support :)
+
+        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
+        它不会影响美观并可以给开发者很大的支持。 :)
+        -->
+
+        <div class="mdl-mini-footer--right-section">
+            <div>
+                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
+                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
+            </div>
+        </div>
+    
+</footer>
+
+
+                    <!-- Import File -->
+<script src="/js/lazyload.min.js"></script>
+<script src="/js/js.min.js"></script>
+<script src="/js/nprogress.js"></script>
+
+<script type="text/javascript">
+    NProgress.configure({
+        showSpinner: true
+    });
+    NProgress.start();
+    $('#nprogress .bar').css({
+        'background': '#29d'
+    });
+    $('#nprogress .peg').css({
+        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
+    });
+    $('#nprogress .spinner-icon').css({
+        'border-top-color': '#29d',
+        'border-left-color': '#29d'
+    });
+    setTimeout(function() {
+        NProgress.done();
+        $('.fade').removeClass('out');
+    }, 800);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Swiftye -->
+
+
+<!-- Local Search-->
+
+
+<!-- Window Load-->
+<script>
+    $(window).load(function() {
+        // Post_Toc parent position fixed
+        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
+    });
+</script>
+
+<!-- MathJax Load-->
+
+
+                </main>
+            </div>
+        </body>
+    
+</html>
